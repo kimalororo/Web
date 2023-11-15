@@ -1,0 +1,18 @@
+﻿@model LB2and3.Models.Entities.Students
+ 
+
+<div class="row">
+    <div class="col-md-4"> @Model.LastName @Model.FirstName @Model.Patronymic
+        (@{Html.RenderAction("GetHobbie", new { studentId = Model.StudentId }); })
+    </div>
+    <div class="col-md-2">@Model.BIrthDate.ToString("D")</div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="col-md-2">@Html.ActionLink("Подробнее", "StudentDetails", "Lab", new { studentId = Model.StudentId }, null)</div>
+        if (User.IsInRole("monitor"))
+        {
+        <div class="col-md-2">@Html.ActionLink("Изменить", "EditStudent", "Lab", new { studentId = Model.StudentId }, null)</div>
+        <div class="col-md-2">@Html.ActionLink("Удалить", "DeleteStudent", "Lab", new { studentId = Model.StudentId }, null)</div>
+        }
+    }
+</div>

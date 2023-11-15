@@ -1,0 +1,34 @@
+﻿@model List<LB2and3.Models.Entities.Students>
+@{
+    ViewBag.Title = "Список студентов";
+}
+
+<h2> Список студентов</h2>
+<br />
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("monitor"))
+    {
+    @Html.ActionLink("Добавить студента", "CreateStudent", "Lab", new { @class = "btn btn-dark" })
+    }
+}
+
+
+    <div class="row">
+        <div class="col-md-4"><strong>ФИО студентов</strong></div>
+        <div class="col-md-2"><strong>Дата рождения</strong></div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="col-md-2"><strong>Подробнее</strong></div>
+            if (User.IsInRole("monitor"))
+            {
+                <div class="col-md-2"><strong>Изменить</strong></div>
+                <div class="col-md-2"><strong>Удалить</strong></div>
+            }
+        }
+    </div>
+
+    @foreach (var student in Model)
+    {
+        { Html.RenderPartial("StudentOverviewPartial", student); }
+    }

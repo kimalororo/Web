@@ -1,0 +1,59 @@
+﻿@model LB2and3.Models.Entities.Students
+
+@{
+    ViewBag.Title = "StudentDetails";
+}
+
+<h2>Информация о студенте</h2>
+<br  />
+<div class="border border-1 rounded-3 border-dark">
+    <br />
+    <div class="row p-2">
+        <div class="col-md-1"><strong>@Html.LabelFor(m => m.LastName)</strong></div>
+        <div class="col-md-3">@Html.DisplayFor(m => m.LastName) </div>
+
+        <div class="col-md-1"><strong>@Html.LabelFor(m => m.FirstName)</strong></div>
+        <div class="col-md-3">@Html.DisplayFor(m => m.FirstName) </div>
+
+        <div class="col-md-1"><strong>@Html.LabelFor(m => m.Patronymic)</strong></div>
+        <div class="col-md-3">@Html.DisplayFor(m => m.Patronymic) </div>
+    </div>
+    <br />
+    <div class="row p-2">
+        <div class="col-md-1"><strong>@Html.LabelFor(m => m.Gender)</strong></div>
+        <div class="col-md-3">
+            @Html.DisplayFor(m => m.Gender)
+        </div>
+
+        <div class="col-md-1"><strong>@Html.LabelFor(m => m.BIrthDate)</strong></div>
+        <div class="col-md-3">
+            @{
+                string parameter = Model.BIrthDate.ToString("D");
+            }
+            @Html.DisplayFor(m => parameter)
+        </div>
+        <div class="col-md-1"><strong>@Html.LabelFor(m => m.WakeUpTime)</strong></div>
+        <div class="col-md-3">
+            @{
+                string prm = Model.InsertDateTime.ToString("t");
+            }
+            @Html.DisplayFor(m => prm)
+        </div>
+    </div>
+    <br />
+    <div class="row p-2">
+        <div class="col-md-auto"><strong>@Html.LabelFor(m => m.InsertDateTime)</strong></div>
+        <div class="col-md-3">
+            @{
+                string param = Model.InsertDateTime.ToString("g");
+            }
+            @Html.DisplayFor(m => param)
+        </div>
+    </div>
+    <br />
+</div>
+<br  />
+<p>
+    @Html.ActionLink("Edit", "EditStudent", new { StudentId = Model.StudentId }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Back to List", "StudentsList", "Lab", new { @class = "btn btn-dark" })
+</p>

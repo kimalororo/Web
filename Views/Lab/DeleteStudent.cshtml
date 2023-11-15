@@ -1,0 +1,80 @@
+﻿@model LB2and3.Models.Entities.Students
+
+@{
+    ViewBag.Title = "DeleteStudent";
+}
+
+<h2>Удаение студента</h2>
+
+<h3>Вы уверены, что хотите удаить данного студента?</h3>
+<div>
+    <h4>Студент</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patronymic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patronymic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BIrthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BIrthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WakeUpTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WakeUpTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    @Html.ActionLink("Back to List", "StudentsList","Lab", new { @class = "btn btn-dark" })
+</div>
+    }
+</div>

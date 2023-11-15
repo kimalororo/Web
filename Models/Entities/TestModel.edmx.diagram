@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1659a5cc24db4160a2ba5d1c0620c9c0" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="I11_Zhamyandabaev_WEBModel.Groups" Width="1.5" PointX="0.875" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="I11_Zhamyandabaev_WEBModel.GroupStudents" Width="1.5" PointX="3.125" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="I11_Zhamyandabaev_WEBModel.Students" Width="1.5" PointX="5.5" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="I11_Zhamyandabaev_WEBModel.FK_GroupStudents_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="I11_Zhamyandabaev_WEBModel.FK_GroupStudents_Students" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="I11_Zhamyandabaev_WEBModel.Hobbies" Width="1.5" PointX="10.125" PointY="3.375" />
+        <EntityTypeShape EntityType="I11_Zhamyandabaev_WEBModel.StudentHobbies" Width="1.5" PointX="7.75" PointY="3.375" />
+        <AssociationConnector Association="I11_Zhamyandabaev_WEBModel.FK_StudentHobbies_Hobbies" />
+        <AssociationConnector Association="I11_Zhamyandabaev_WEBModel.FK_StudentHobbies_Students" />
+        <EntityTypeShape EntityType="I11_Zhamyandabaev_WEBModel.Role" Width="1.5" PointX="10.25" PointY="1" />
+        <EntityTypeShape EntityType="I11_Zhamyandabaev_WEBModel.User" Width="1.5" PointX="7.75" PointY="0.5" />
+        <AssociationConnector Association="I11_Zhamyandabaev_WEBModel.FK_User_Role" />
+        <AssociationConnector Association="I11_Zhamyandabaev_WEBModel.FK_Students_User" ></AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
